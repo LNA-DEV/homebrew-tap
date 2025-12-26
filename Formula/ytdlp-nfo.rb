@@ -6,7 +6,7 @@ class YtdlpNfo < Formula
   url "https://github.com/LNA-DEV/ytdlp-nfo/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "b22a447524e6a93727ad9ab45f326ada72607a0a1773c4c1c70088d0fd0bfe27"
   license "MIT"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -17,8 +17,11 @@ class YtdlpNfo < Formula
 
   def install
     virtualenv_create(libexec, "python3.12")
-    system libexec/"bin/pip", "install", "-v", "--no-deps", "--no-binary", ":all:", "--ignore-installed", buildpath
+    # Install yt-dlp first (will get latest version)
     system libexec/"bin/pip", "install", "-v", "yt-dlp"
+    # Then install the package (without dependencies since yt-dlp is already installed)
+    system libexec/"bin/pip", "install", "-v", "--no-deps", "--no-binary", ":all:", "--ignore-installed", buildpath
+    # Create symlink
     bin.install_symlink libexec/"bin/ytdlp-nfo"
   end
 
