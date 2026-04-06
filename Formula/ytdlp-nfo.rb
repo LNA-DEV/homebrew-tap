@@ -3,8 +3,8 @@ class YtdlpNfo < Formula
 
   desc "Download videos with NFO metadata files for Jellyfin/Kodi"
   homepage "https://github.com/LNA-DEV/ytdlp-nfo"
-  url "https://github.com/LNA-DEV/ytdlp-nfo/archive/refs/tags/v1.1.4.tar.gz"
-  sha256 "728fff0c27c07869a2c295fc9cd3093065be188a4dcd2a56bb11d339305d529a"
+  url "https://github.com/LNA-DEV/ytdlp-nfo/archive/refs/tags/v1.1.5.tar.gz"
+  sha256 "6eef7fab576f2472996f07422c8e9c903b180cc4f4fea4db62c39b5b8adb4368"
   license "MIT"
 
   livecheck do
